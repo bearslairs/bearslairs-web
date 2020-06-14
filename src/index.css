@@ -47,7 +47,10 @@ p a:hover {
 }
 
 #container-header {
+  background-color: #4c4a5a;
   background-image: url(/header.png);
+  background-repeat: no-repeat;
+  background-position: center;
   min-height: 500px;
   text-align: center;
 }
@@ -73,4 +76,66 @@ p a:hover {
 
 #container-environment p {
   text-align: center;
+}
+
+#container-about {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(235, 231, 231);
+  text-align: center;
+}
+
+#container-about img {
+  width: 100px;
+  height: 75px;
+  margin-bottom: 10px;
+}
+
+#container-security {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgb(48, 11, 11);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+#container-lockers {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+#container-lair {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+#container-lair h3 {
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+#container-lair .card {
+  margin-top: 50px;
+}
+
+.card-header {
+  background-color: rgb(48, 11, 11);
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.card-footer {
+  background-color: rgb(48, 11, 11);
+}
+
+.card-footer .btn {
+  background-color: rgb(123, 179, 44);
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  border: none;
 }

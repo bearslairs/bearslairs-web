@@ -1,4 +1,7 @@
 import React from 'react';
+import { LinkContainer } from 'react-router-bootstrap'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
@@ -16,6 +19,7 @@ const cookies = new Cookies();
 const CopyApi = 'https://raw.githubusercontent.com/bearslairs/bearslairs-data/master/copy';
 const UbiBotApi = 'https://api.ubibot.io/channels/13604?api_key=609210eb2306427a88d662d48ddb578d';
 const languages = ['bg', 'en', 'ru'];
+const lairImages = ['/lair-baby.png', '/lair-mama.png', '/lair-papa.png'];
 
 class App extends React.Component {
   state = {
@@ -74,7 +78,7 @@ class App extends React.Component {
     <>
       <Container id="container-logo">
         <Row>
-          <Image src="logo.png" className="m-auto" />
+          <Image src={'/logo.png'} className="m-auto" />
         </Row>
       </Container>
       <Navbar id="container-nav">
@@ -130,7 +134,6 @@ class App extends React.Component {
               }).format(new Date(this.state.temperature.created_at))
             }:&nbsp;
             <strong>{(Math.round(this.state.temperature.value * 10) / 10)}°C</strong>
-
             <h4>humidity</h4>
             {
               new Intl.DateTimeFormat("en-GB", {
@@ -147,7 +150,99 @@ class App extends React.Component {
           </Col>
         </Row>
       </Container>
-      <Container fluid>
+      <Container id="container-about" fluid>
+        <Container>
+          <Row className="justify-content-xl-center justify-content-md-center">
+            <Col xl={3}>
+              <Image src={'/about-access.png'} />
+              <p>
+                when you book and pay for your locker, a unique door access code is created just for you. each customer gets a different access code that will work during daytime hours for the duration of the locker booking.
+              </p>
+            </Col>
+            <Col xl={3}>
+              <Image src={'/about-notify.png'} />
+              <p>
+                every time your code is used to access the storage facility, we will send you an email so that you are aware of anyone accessing your locker, if you have shared your door access code with family or trusted friends.
+              </p>
+            </Col>
+            <Col xl={3}>
+              <Image src={'/about-security.png'} />
+              <p>
+                individual lockers are secured with your own padlock. only you can decide who will have copies of your locker key and will have access to your secure locker. we do not keep copies of keys for booked lockers. if your keys are lost or stolen, we can remove the lock for a fee of bgn 20.00 but the lock will be destroyed.
+              </p>
+            </Col>
+            <Col xl={3}>
+              <Image src={'/about-time.png'} />
+              <p>
+                you may access your locker between the hours of 8:00 and 22:00. please be considerate of the neighbours and do not make excessive noise if you need access to your locker after sunset and before sunrise. night access is restricted in consideration of our residential neighbours.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+      <Container id="container-security" fluid>
+        <Container style={{width: '50%'}}>
+          <h3>
+            secure, private lockers
+          </h3>
+          <p>
+            our secure, private lockers give you complete peace of mind for your belongings.<br />
+            the facility is monitored 24 hours a day by a comprehensive cctv system.<br />
+            choose from our baby (small), mama (medium) and papa (large) bears lairs.<br />
+            each locker is secured with a lock that only you have keys for.
+          </p>
+        </Container>
+      </Container>
+      <Container id="container-lair">
+        <h3>
+          choose your lair
+        </h3>
+        <Row className="justify-content-xl-center justify-content-md-center">
+          {
+            this.state.copy.cards.slice(0, 3).map((card, cardIndex) => (
+              <Col key={cardIndex}>
+              <Card className="h-100">
+                <Card.Header>
+                  {card.title}
+                </Card.Header>
+                <Card.Img variant="top" src={lairImages[cardIndex]} alt={card.image.alt} rounded="true" />
+                <Card.Body>
+                  <Card.Title>
+                    {card.description.join(' ')}
+                  </Card.Title>
+                  <hr />
+
+                  <ul>
+                    {
+                      card.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} style={{fontWeight: 600, margin: 0, padding: 0}}>
+                          {feature.text}
+                          <ul>
+                            {
+                              feature.details.map((detail, detailIndex) => (
+                                <li key={detailIndex} style={{listStyleType: 'none', fontWeight: 'normal', margin: 0, padding: 0}}>
+                                  {detail}
+                                </li>
+                              ))
+                            }
+                          </ul>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </Card.Body>
+                <Card.Footer>
+                  <LinkContainer to={card.button.link}>
+                    <Button size="sm">
+                      {card.button.text}
+                    </Button>
+                  </LinkContainer>
+                </Card.Footer>
+              </Card>
+              </Col>
+            ))
+          }
+        </Row>
       </Container>
     </>
     );
