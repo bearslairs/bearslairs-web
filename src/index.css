@@ -1,13 +1,76 @@
 body {
   margin: 0;
+  /*
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    */
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: rgb(48, 11, 11);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+p a {
+  color: rgb(48, 11, 11);
+  text-decoration: underline;
+  text-decoration-color: rgb(123, 179, 44);
+}
+
+p a:hover {
+  color: rgb(123, 179, 44);
+}
+
+#container-logo {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+#container-nav {
+  background-color: rgb(235, 231, 231);
+  /*
+  font-size: 4pt;
+  */
+  text-transform: uppercase;
+}
+
+#container-nav a {
+  color: rgb(48, 11, 11);
+}
+
+#container-nav a:hover {
+  color: rgb(123, 179, 44);
+}
+
+#container-header {
+  background-image: url(/header.png);
+  min-height: 500px;
+  text-align: center;
+}
+
+#container-header h2 {
+  color: rgb(255, 255, 255);
+  font-weight: 900;
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+#container-environment {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#container-environment h3 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+#container-environment p {
+  text-align: center;
 }

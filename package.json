@@ -7,10 +7,15 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.0",
+    "google-map-react": "^1.1.7",
+    "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "react-thermometer-component": "^1.0.1",
+    "typeface-roboto": "^0.0.75",
+    "universal-cookie": "^4.0.3"
   },
   "scripts": {
     "start": "PATH=$PATH:/mnt/c/Windows/System32 react-scripts start",
