@@ -1,10 +1,5 @@
 body {
   margin: 0;
-  /*
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    */
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -25,24 +20,36 @@ p a:hover {
   color: rgb(123, 179, 44);
 }
 
+h3 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 #container-logo {
   padding-top: 10px;
   padding-bottom: 20px;
 }
 
-#container-nav {
+#container-nav,
+#container-about,
+#container-adaptive {
   background-color: rgb(235, 231, 231);
-  /*
-  font-size: 4pt;
-  */
-  text-transform: uppercase;
 }
 
 #container-nav a {
   color: rgb(48, 11, 11);
+  text-transform: uppercase;
 }
 
-#container-nav a:hover {
+#container-footer a {
+  color: rgb(255, 255, 255);
+}
+
+#container-nav a:hover,
+#container-footer a:hover {
   color: rgb(123, 179, 44);
 }
 
@@ -67,28 +74,35 @@ p a:hover {
   padding-bottom: 50px;
 }
 
-#container-environment h3 {
-  text-align: center;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-
 #container-environment p {
   text-align: center;
 }
 
-#container-about {
+#container-facility {
+  color: rgb(255, 255, 255);
+  background-color: rgb(123, 179, 44);
+}
+
+#container-about,
+#container-facility {
   padding-top: 50px;
   padding-bottom: 50px;
-  background-color: rgb(235, 231, 231);
   text-align: center;
 }
 
-#container-about img {
-  width: 100px;
+#container-about img,
+#container-facility img {
   height: 75px;
   margin-bottom: 10px;
+}
+
+#container-facility .btn {
+  background-color: rgb(48, 11, 11);
+}
+
+#container-security .btn,
+.card-footer .btn {
+  background-color: rgb(123, 179, 44);
 }
 
 #container-security {
@@ -99,26 +113,29 @@ p a:hover {
   text-align: center;
 }
 
+#container-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgb(48, 11, 11);
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+#container-footer hr {
+  border-top: 1px solid rgb(255, 255, 255);
+}
+
 #container-lockers {
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
 }
 
-#container-lair {
+#container-lair,
+#container-bike {
   padding-top: 50px;
   padding-bottom: 50px;
   text-align: center;
-}
-
-#container-lair h3 {
-  font-weight: 600;
-  font-size: 1.5em;
-  text-transform: uppercase;
-}
-
-#container-lair .card {
-  margin-top: 50px;
 }
 
 .card-header {
@@ -133,9 +150,46 @@ p a:hover {
   background-color: rgb(48, 11, 11);
 }
 
-.card-footer .btn {
-  background-color: rgb(123, 179, 44);
+.btn {
   color: rgb(255, 255, 255);
   text-transform: uppercase;
   border: none;
+}
+
+#container-adaptive {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+blockquote {
+  border: 1px solid rgb(48, 11, 11);
+  padding: 50px 0 0;
+  /*quotes: "\201C""\201D""\2018""\2019";*/
+}
+
+blockquote p {
+  padding: 0 50px;
+}
+
+blockquote:before {
+  color: rgb(123, 179, 44);
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  display: block;
+  clear: both;
+  float: left;
+  margin-left: 10px;
+}
+
+blockquote:after {
+  color: rgb(123, 179, 44);
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  display: block;
+  clear: both;
+  float: right;
+  margin-right: 10px;
 }
